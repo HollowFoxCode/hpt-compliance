@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Engagement Confirmed | HPT Compliance Solutions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Serif+4:wght@300;400;600&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --navy: #0D1F3C;
+    --navy-mid: #162D52;
+    --gold: #C9A84C;
+    --gold-light: #E8C97A;
+    --cream: #F5F0E8;
+    --white: #FFFFFF;
+    --slate: #8A9BB5;
+    --green-safe: #1E8449;
+    --text-dark: #0D1F3C;
+    --text-mid: #3D5280;
+    --border: rgba(201,168,76,0.25);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Source Serif 4', Georgia, serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    line-height: 1.7;
+    font-size: 17px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  /* NAV (Matches index.html) */
+  nav {
+    background: var(--navy);
+    padding: 18px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--gold);
+  }
+
+  .nav-logo { display: flex; align-items: center; gap: 14px; }
+  .nav-seal { width: 44px; height: 44px; }
+  .nav-brand { display: flex; flex-direction: column; }
+  .nav-brand-name {
+    font-family: 'Playfair Display', serif;
+    color: var(--white);
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.1;
+  }
+  .nav-brand-sub {
+    color: var(--gold);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  /* SUCCESS HERO */
+  .success-hero {
+    background: var(--navy);
+    padding: 100px 40px 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .success-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 60% 40% at 50% 0%, rgba(201,168,76,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .status-badge {
+    display: inline-block;
+    background: rgba(30,132,73,0.15);
+    color: #27AE60;
+    border: 1px solid rgba(30,132,73,0.4);
+    padding: 8px 20px;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 32px;
+    position: relative;
+  }
+
+  .success-hero h1 {
+    font-family: 'Playfair Display', serif;
+    color: var(--white);
+    font-size: clamp(32px, 5vw, 48px);
+    font-weight: 900;
+    margin-bottom: 20px;
+    position: relative;
+  }
+
+  .success-hero p {
+    color: var(--slate);
+    font-size: 19px;
+    max-width: 600px;
+    margin: 0 auto;
+    font-weight: 300;
+    position: relative;
+  }
+
+  /* CONTENT SECTION */
+  .main-content {
+    flex-grow: 1;
+    padding: 80px 40px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .next-steps-card {
+    background: var(--white);
+    border: 1px solid rgba(13,31,60,0.08);
+    padding: 48px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(13,31,60,0.03);
+  }
+
+  .next-steps-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: var(--gold);
+  }
+
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    color: var(--navy);
+    margin-bottom: 32px;
+    text-align: center;
+  }
+
+  .step-item {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 32px;
+  }
+
+  .step-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    color: var(--gold);
+    font-weight: 700;
+    line-height: 1;
+    flex-shrink: 0;
+    opacity: 0.5;
+  }
+
+  .step-text h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .step-text p {
+    font-size: 15px;
+    color: var(--text-mid);
+    line-height: 1.6;
+  }
+
+  .btn-home {
+    display: inline-block;
+    background: var(--navy);
+    color: var(--white);
+    padding: 16px 32px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-top: 20px;
+    transition: background 0.2s;
+  }
+
+  .btn-home:hover { background: var(--navy-light); }
+
+  /* FOOTER (Matches index.html) */
+  footer {
+    background: #070F1E;
+    color: var(--slate);
+    padding: 40px;
+    text-align: center;
+    font-size: 13px;
+    border-top: 1px solid rgba(201,168,76,0.15);
+  }
+
+  @media (max-width: 600px) {
+    .next-steps-card { padding: 32px 24px; }
+    .success-hero { padding: 60px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">
+    <svg class="nav-seal" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="22" cy="22" r="20" stroke="#C9A84C" stroke-width="1.5"/>
+      <text x="22" y="24" text-anchor="middle" font-family="Georgia" font-size="9" fill="#C9A84C" font-weight="bold">HPT</text>
+    </svg>
+    <div class="nav-brand">
+      <span class="nav-brand-name">HPT Compliance Solutions</span>
+      <span class="nav-brand-sub">North Bend, Washington</span>
+    </div>
+  </div>
+</nav>
+
+<div class="success-hero">
+  <div class="status-badge">Phase 1 Engagement Active</div>
+  <h1>Engagement Confirmed.</h1>
+  <p>Your facility's Safe-Harbor Bridge Plan has been initiated. We are moving to secure your compliance status immediately.</p>
+</div>
+
+<div class="main-content">
+  <div class="next-steps-card">
+    <h2>Your Remediation Timeline</h2>
+    
+    <div class="step-item">
+      <div class="step-number">01</div>
+      <div class="step-text">
+        <h3>Immediate Receipt</h3>
+        <p>A formal confirmation of payment and a countersigned Data Processing Agreement (DPA) has been dispatched to your billing email address.</p>
+      </div>
+    </div>
+
+    <div class="step-item">
+      <div class="step-number">02</div>
+      <div class="step-text">
+        <h3>Bridge Plan Delivery (Within 2 Hours)</h3>
+        <p>Phillip Burnett is currently generating your facility-specific Remediation Roadmap and v3.0 Attestation Statement. These will arrive in your inbox shortly.</p>
+      </div>
+    </div>
+
+    <div class="step-item">
+      <div class="step-number">03</div>
+      <div class="step-text">
+        <h3>Technical Briefing</h3>
+        <p>You will receive an invitation for a 10-minute technical briefing to coordinate the secure ingestion of your EDI 835/ERA historical files for Phase 2 transformation.</p>
+      </div>
+    </div>
+
+    <div style="text-
