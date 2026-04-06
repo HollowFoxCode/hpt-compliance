@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
 Sitemap: https://hpt-compliance.com/sitemap.xml
