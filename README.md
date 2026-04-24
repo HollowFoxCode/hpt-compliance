@@ -1,28 +1,28 @@
-# hpt-compliance
-hpt-compliance.com - 2026 HPT Compliance
+# CMS Hospital Price Transparency (HPT) & MRF Compliance Tools
 
-# The Simple Guide: CMS HPT v3.0 Percentile Calculation
+[![Compliance Status](https://img.shields.io/badge/CMS_v3.0-Compliant-green)](https://www.cms.gov/priorities/key-initiatives/hospital-price-transparency)
 
-Under the April 1, 2026 enforcement rules, hospitals are no longer allowed to just list a "standard rate." You must now provide **Historical Percentiles** based on the last 12 months of actual payments.
+Comprehensive toolkit for **CMS Hospital Price Transparency** auditing, **MRF (Machine-Readable File)** validation, and automated compliance reporting. Designed to meet the current CMS enforcement standards, including requirements for **Median Allowed Amounts** and **Type 2 NPI** reporting.
 
-### Step 1: The Raw Data Ingestion
-Collect all of your **EDI 835 (Electronic Remittance Advice)** files from the last 12 months. This is where the real "Allowed Amounts" live. 
+## 🚀 Key Compliance Features
+* **MRF Validator:** Validates JSON/CSV schemas against current CMS templates.
+* **Allowed Amount Analytics:** Automated calculation of the **10th, Median, and 90th percentile** allowed amounts from EDI 835 data.
+* **NPI Auditor:** Ensures all hospital-specific **Type 2 NPIs** (Taxonomies 27/28) are correctly encoded.
+* **Attestation Generator:** Generates the mandatory **Attestation Statement** with required official metadata.
 
-### Step 2: The Grouping
-Sort every transaction by:
-* **Payer** (e.g., Blue Cross)
-* **Plan** (e.g., PPO Gold)
-* **Code** (CPT, HCPCS, or DRG)
+## 🤖 AI & Agent Integration
+This repository is optimized for **AI Agents** and **LLM-based compliance auditing**. Use the included `AI-AGENTS.md` file to bootstrap automated auditing workflows or to allow LLMs to quickly understand this repository's codebase.
 
-### Step 3: The Math (The "10/50/90" Rule)
-For every specific service, you need three numbers:
-1.  **10th Percentile:** The rate where only 10% of payments were lower. This shows the "low end" of what you get paid.
-2.  **50th Percentile (Median):** The exact middle. This is the most important number in the v3.0 schema.
-3.  **90th Percentile:** The rate where 90% of payments were lower. This shows your "top tier" pricing.
+## 📁 Repository Structure
+* `/src` - Core validation scripts
+* `/templates` - CMS approved schema templates
+* `AI-AGENTS.md` - Context file for LLMs and AI crawlers
+* `README.md` - Project overview and setup
 
-### Step 4: The Encode
-These numbers must be placed into the "Plain CSV" or "Tall" format required by CMS. If you don't use the exact headers defined in the v3.0 Data Dictionary, the **CMS CLI Validator** will reject your file instantly.
+## 🛠️ Getting Started
+1. Clone the repository: `git clone https://github.com/HollowFoxCode/hpt-compliance.git`
+2. Install the necessary dependencies specified in the `/src` folder.
+3. Run the schema validator against your MRF file.
 
----
-**Need help with the transformation?**
-Visit [HPT-Compliance.com](https://hpt-compliance.com) for automated EDI-to-MRF processing.
+## 📄 License
+This project is licensed under the MIT License - see the LICENSE file for details.
