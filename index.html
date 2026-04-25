@@ -401,6 +401,378 @@
     .reveal-delay-2 { transition-delay: 0.24s; }
     .reveal-delay-3 { transition-delay: 0.36s; }
 
+    /* ── SAMPLE REPORT SECTION ── */
+    .sample-report-section {
+      background: var(--cream);
+      padding: 80px 40px;
+    }
+    .sample-report-intro {
+      text-align: center;
+      max-width: 1100px;
+      margin: 0 auto 48px;
+    }
+    .report-wrapper {
+      max-width: 1100px;
+      margin: 0 auto;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 32px 80px rgba(13,31,60,0.25), 0 8px 24px rgba(13,31,60,0.15);
+    }
+    /* macOS chrome bar */
+    .report-chrome {
+      background: #1a1f2b;
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 1px solid #252d3d;
+    }
+    .report-chrome-dot {
+      width: 12px; height: 12px;
+      border-radius: 50%;
+      background: #3a3f50;
+    }
+    .report-chrome-dot:nth-child(1) { background: #ff5f56; }
+    .report-chrome-dot:nth-child(2) { background: #ffbd2e; }
+    .report-chrome-dot:nth-child(3) { background: #27c93f; }
+    .report-chrome-label {
+      font-size: 11px;
+      color: #5a6478;
+      font-family: 'DM Mono', monospace;
+      margin-left: 8px;
+      letter-spacing: 0.04em;
+    }
+
+    /* The dark dashboard itself */
+    .sample-report-body {
+      background: #0a0e14;
+      color: #e2eaf4;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    /* Report header */
+    .rpt-header {
+      border-bottom: 1px solid #1f2d40;
+      padding: 28px 40px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .rpt-eyebrow {
+      font-family: 'Syne', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #00c9a7;
+      margin-bottom: 6px;
+    }
+    .rpt-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 22px;
+      font-weight: 800;
+      color: #e2eaf4;
+      line-height: 1.2;
+    }
+    .rpt-meta {
+      font-size: 11px;
+      color: #6b7f99;
+      margin-top: 6px;
+      font-family: 'DM Mono', monospace;
+    }
+    .rpt-header-right { text-align: right; }
+    .rpt-score-badge {
+      display: inline-block;
+      background: #111720;
+      border: 1px solid #ef4444;
+      color: #ef4444;
+      font-family: 'Syne', sans-serif;
+      font-size: 18px;
+      font-weight: 800;
+      padding: 6px 16px;
+      border-radius: 4px;
+      margin-bottom: 4px;
+    }
+    .rpt-score-sub { font-size: 11px; color: #6b7f99; }
+    .rpt-sources { font-size: 10px; color: #4a5568; font-family: 'DM Mono', monospace; margin-top: 8px; line-height: 1.6; }
+
+    /* Summary bar */
+    .rpt-summary-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-bottom: 1px solid #1f2d40;
+    }
+    .rpt-stat-cell {
+      padding: 16px 24px;
+      border-right: 1px solid #1f2d40;
+    }
+    .rpt-stat-cell:last-child { border-right: none; }
+    .rpt-stat-label {
+      font-size: 9px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #6b7f99;
+      margin-bottom: 4px;
+      font-family: 'DM Mono', monospace;
+    }
+    .rpt-stat-value {
+      font-family: 'Syne', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+    }
+    .rpt-stat-value.pass { color: #22c55e; }
+    .rpt-stat-value.warn { color: #f59e0b; }
+    .rpt-stat-value.fail { color: #ef4444; }
+
+    /* Main two-column layout */
+    .rpt-main { display: grid; grid-template-columns: 220px 1fr; height: 580px; }
+
+    /* Sidebar */
+    .rpt-sidebar {
+      border-right: 1px solid #1f2d40;
+      padding: 16px 0;
+      overflow-y: auto;
+      background: #0a0e14;
+    }
+    .rpt-sidebar-section { margin-bottom: 6px; }
+    .rpt-sidebar-title {
+      font-size: 9px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #6b7f99;
+      padding: 6px 16px;
+      font-family: 'DM Mono', monospace;
+    }
+    .rpt-sidebar-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 16px;
+      cursor: pointer;
+      transition: background 0.15s;
+      font-size: 12px;
+      color: #98aec4;
+      border-left: 2px solid transparent;
+    }
+    .rpt-sidebar-item:hover { background: #111720; color: #e2eaf4; }
+    .rpt-sidebar-item.rpt-active { background: #111720; color: #e2eaf4; border-left-color: #3b82f6; }
+
+    .rpt-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+    .rpt-dot.pass { background: #22c55e; }
+    .rpt-dot.warn { background: #f59e0b; }
+    .rpt-dot.fail { background: #ef4444; }
+
+    /* Content pane */
+    .rpt-content {
+      padding: 24px 28px;
+      overflow-y: auto;
+      background: #0a0e14;
+      position: static;
+    }
+    .rpt-section { display: none; }
+    .rpt-section.rpt-active { display: block; }
+    .rpt-section-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 3px;
+      color: #e2eaf4;
+    }
+    .rpt-section-sub {
+      font-size: 11px;
+      color: #6b7f99;
+      font-family: 'DM Mono', monospace;
+      margin-bottom: 18px;
+    }
+
+    .rpt-overview-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .rpt-overview-card {
+      background: #111720;
+      border: 1px solid #1f2d40;
+      border-radius: 6px;
+      padding: 14px;
+    }
+    .rpt-overview-card h3 {
+      font-family: 'DM Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #6b7f99;
+      margin-bottom: 8px;
+    }
+    .rpt-overview-card p, .rpt-overview-card a {
+      font-size: 12px;
+      color: #98aec4;
+      line-height: 1.55;
+    }
+    .rpt-overview-card a { color: #3b82f6; word-break: break-all; text-decoration: none; }
+
+    .rpt-check-card {
+      background: #111720;
+      border: 1px solid #1f2d40;
+      border-radius: 6px;
+      margin-bottom: 8px;
+      overflow: hidden;
+    }
+    .rpt-check-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px 16px;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .rpt-check-header:hover { background: #1a2230; }
+    .rpt-check-status {
+      padding: 2px 8px;
+      border-radius: 3px;
+      font-size: 9px;
+      font-weight: 600;
+      font-family: 'DM Mono', monospace;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .rpt-check-status.pass { background: rgba(34,197,94,0.12); color: #22c55e; border: 1px solid rgba(34,197,94,0.3); }
+    .rpt-check-status.warn { background: rgba(245,158,11,0.12); color: #f59e0b; border: 1px solid rgba(245,158,11,0.3); }
+    .rpt-check-status.fail { background: rgba(239,68,68,0.12); color: #ef4444; border: 1px solid rgba(239,68,68,0.3); }
+    .rpt-check-title-area { flex: 1; }
+    .rpt-check-title { font-size: 12px; font-weight: 500; color: #e2eaf4; margin-bottom: 2px; }
+    .rpt-check-ref { font-size: 10px; color: #6b7f99; font-family: 'DM Mono', monospace; }
+    .rpt-chevron { color: #6b7f99; font-size: 11px; transition: transform 0.2s; margin-top: 2px; }
+    .rpt-check-header.rpt-open .rpt-chevron { transform: rotate(90deg); }
+    .rpt-check-body { display: none; padding: 0 16px 12px 46px; border-top: 1px solid #1f2d40; }
+    .rpt-check-body.rpt-open { display: block; }
+    .rpt-check-finding { font-size: 12px; color: #98aec4; margin-top: 10px; line-height: 1.65; }
+    .rpt-check-action {
+      margin-top: 10px;
+      background: rgba(59,130,246,0.07);
+      border-left: 2px solid #3b82f6;
+      padding: 8px 12px;
+      border-radius: 0 4px 4px 0;
+      font-size: 11px;
+      color: #98aec4;
+    }
+    .rpt-check-action strong {
+      color: #3b82f6;
+      font-family: 'DM Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    .rpt-alert-box {
+      background: rgba(239,68,68,0.07);
+      border: 1px solid rgba(239,68,68,0.25);
+      border-radius: 5px;
+      padding: 12px 14px;
+      margin-bottom: 14px;
+      font-size: 12px;
+      color: #98aec4;
+    }
+    .rpt-alert-title { color: #ef4444; font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 5px; }
+
+    .rpt-warn-box {
+      background: rgba(245,158,11,0.07);
+      border: 1px solid rgba(245,158,11,0.25);
+      border-radius: 5px;
+      padding: 12px 14px;
+      margin-bottom: 14px;
+      font-size: 12px;
+      color: #98aec4;
+    }
+    .rpt-warn-title { color: #f59e0b; font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 5px; }
+
+    .rpt-mrf-preview {
+      background: #1a2230;
+      border: 1px solid #1f2d40;
+      border-radius: 5px;
+      padding: 12px;
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: #6b7f99;
+    }
+    .rpt-mrf-row { display: flex; gap: 12px; margin-bottom: 2px; }
+    .rpt-mrf-key { color: #00c9a7; min-width: 160px; flex-shrink: 0; }
+    .rpt-mrf-val { color: #98aec4; }
+    .rpt-mrf-val.bad { color: #ef4444; }
+
+    .rpt-penalty-table { width: 100%; border-collapse: collapse; font-size: 12px; margin-top: 10px; }
+    .rpt-penalty-table th { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: #6b7f99; text-align: left; padding: 7px 10px; border-bottom: 1px solid #1f2d40; }
+    .rpt-penalty-table td { padding: 8px 10px; border-bottom: 1px solid rgba(31,45,64,0.5); color: #98aec4; }
+
+    .rpt-remediation-step { display: flex; gap: 12px; margin-bottom: 10px; background: #111720; border: 1px solid #1f2d40; border-radius: 5px; padding: 12px 14px; }
+    .rpt-step-num { font-family: 'Syne', sans-serif; font-size: 18px; font-weight: 800; color: #ef4444; flex-shrink: 0; min-width: 26px; }
+    .rpt-step-body { flex: 1; }
+    .rpt-step-title { font-size: 12px; font-weight: 500; color: #e2eaf4; margin-bottom: 3px; }
+    .rpt-step-detail { font-size: 11px; color: #98aec4; line-height: 1.55; }
+
+    /* GATE OVERLAY */
+    .report-gate {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 340px;
+      background: linear-gradient(to bottom, rgba(10,14,20,0) 0%, rgba(10,14,20,0.92) 30%, rgba(10,14,20,0.98) 60%, #0a0e14 100%);
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding-bottom: 40px;
+    }
+    .report-gate-inner { text-align: center; padding: 0 40px; }
+    .report-gate-icon { font-size: 28px; margin-bottom: 12px; opacity: 0.6; }
+    .report-gate-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+    .report-gate-sub { font-family: 'Source Serif 4', serif; font-size: 14px; color: rgba(255,255,255,0.6); max-width: 480px; margin: 0 auto 24px; line-height: 1.65; font-weight: 300; }
+    .report-gate-cta {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--navy);
+      font-family: 'Source Serif 4', serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 14px 32px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .report-gate-cta:hover { background: var(--gold-light); transform: translateY(-1px); }
+    .report-gate-note { font-family: 'DM Mono', monospace; font-size: 10px; color: rgba(255,255,255,0.35); margin-top: 12px; letter-spacing: 0.1em; text-transform: uppercase; }
+
+    .report-below-cta {
+      background: #070f1e;
+      border-top: 1px solid rgba(201,168,76,0.2);
+      padding: 40px;
+      text-align: center;
+    }
+    .report-below-inner { max-width: 700px; margin: 0 auto; }
+    .report-below-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 24px;
+      line-height: 1.45;
+    }
+
     /* ── MOBILE ── */
     @media (max-width: 900px) {
       nav { padding: 14px 20px; top: 34px; }
@@ -409,11 +781,17 @@
       .hero-side-card { display: none; }
       .hero { padding: 60px 20px 50px; }
       section { padding: 60px 20px; }
-      .deliverable-section, .widget-section, .pricing-section, .faq-section, .contact-section { padding: 60px 20px; }
+      .deliverable-section, .widget-section, .pricing-section, .faq-section, .contact-section, .sample-report-section { padding: 60px 20px; }
       .deliverable-grid, .phases-grid, .pricing-grid, .about-grid { grid-template-columns: 1fr; }
       .penalty-grid { grid-template-columns: 1fr; }
       .widget-form { grid-template-columns: 1fr; }
       .sticky-rail { display: none; }
+      .rpt-main { grid-template-columns: 1fr; max-height: none; }
+      .rpt-sidebar { border-right: none; border-bottom: 1px solid #1f2d40; }
+      .rpt-summary-bar { grid-template-columns: 1fr 1fr; }
+      .rpt-overview-grid { grid-template-columns: 1fr; }
+      .rpt-header { flex-direction: column; padding: 20px; }
+      .rpt-header-right { text-align: left; }
     }
   </style>
 </head>
@@ -450,6 +828,7 @@
   </div>
   <ul class="nav-links">
     <li><a href="#deliverables">What You Receive</a></li>
+    <li><a href="#sample-report">Sample Report</a></li>
     <li><a href="#phases">Services</a></li>
     <li><a href="#pricing">Pricing</a></li>
     <li><a href="#about">About</a></li>
@@ -562,6 +941,262 @@
     </div>
   </div>
 </div>
+
+<!-- SAMPLE REPORT SECTION -->
+<div class="sample-report-section" id="sample-report">
+  <div class="sample-report-intro">
+    <span class="section-eyebrow reveal" style="color:var(--gold);">Sample Deliverable</span>
+    <h2 class="section-title reveal reveal-delay-1">This Is What Your<br/>Compliance Team Receives.</h2>
+    <p class="section-intro reveal reveal-delay-2" style="max-width:620px; margin-left:auto; margin-right:auto; text-align:center;">
+      The interactive report below is a representative example using fictional data. Every finding is expandable, every deficiency is cited to the specific CFR sub-section, and every remediation step is actionable. Your facility's actual report will look exactly like this.
+    </p>
+  </div>
+
+  <!-- REPORT WRAPPER WITH GATE -->
+  <div class="report-wrapper reveal reveal-delay-3">
+    <div class="report-chrome">
+      <div class="report-chrome-dot"></div>
+      <div class="report-chrome-dot"></div>
+      <div class="report-chrome-dot"></div>
+      <span class="report-chrome-label">HPT Compliance Analysis — Valley Ridge Medical Center (Sample)</span>
+    </div>
+
+    <!-- THE REPORT ITSELF (fictional data) -->
+    <div class="sample-report-body">
+
+      <!-- REPORT HEADER -->
+      <div class="rpt-header">
+        <div class="rpt-header-left">
+          <div class="rpt-eyebrow">CMS Hospital Price Transparency</div>
+          <div class="rpt-title">Compliance Analysis<br/>Valley Ridge Medical Center</div>
+          <div class="rpt-meta">NPI 1234567890 · Springfield, OH · Analysis Date: April 24, 2026</div>
+        </div>
+        <div class="rpt-header-right">
+          <div class="rpt-score-badge">NON-COMPLIANT</div>
+          <div class="rpt-score-sub">Compliance Status</div>
+          <div class="rpt-sources">Sources: 45 CFR Part 180 (current)<br/>CMS HPT FAQs (Mar. 24, 2026)<br/>84 FR 65525 · 90 FR 54087</div>
+        </div>
+      </div>
+
+      <!-- SUMMARY BAR -->
+      <div class="rpt-summary-bar">
+        <div class="rpt-stat-cell">
+          <div class="rpt-stat-label">Checks Passed</div>
+          <div class="rpt-stat-value pass">3</div>
+        </div>
+        <div class="rpt-stat-cell">
+          <div class="rpt-stat-label">Needs Attention</div>
+          <div class="rpt-stat-value warn">2</div>
+        </div>
+        <div class="rpt-stat-cell">
+          <div class="rpt-stat-label">Non-Compliant (Confirmed)</div>
+          <div class="rpt-stat-value fail">7</div>
+        </div>
+        <div class="rpt-stat-cell">
+          <div class="rpt-stat-label">Max Daily CMP Risk</div>
+          <div class="rpt-stat-value fail">$2,140</div>
+        </div>
+      </div>
+
+      <!-- MAIN BODY: sidebar + content -->
+      <div class="rpt-main">
+
+        <!-- SIDEBAR -->
+        <div class="rpt-sidebar">
+          <div class="rpt-sidebar-section">
+            <div class="rpt-sidebar-title">Navigation</div>
+            <div class="rpt-sidebar-item rpt-active" onclick="rptShow('rpt-overview', this)">
+              <span style="font-size:13px">⊞</span> Overview
+            </div>
+          </div>
+          <div class="rpt-sidebar-section">
+            <div class="rpt-sidebar-title">§ 180.50 · Machine-Readable File</div>
+            <div class="rpt-sidebar-item" onclick="rptShow('rpt-txt', this)"><span class="rpt-dot warn"></span> .txt Root File</div>
+            <div class="rpt-sidebar-item" onclick="rptShow('rpt-naming', this)"><span class="rpt-dot fail"></span> File Naming</div>
+            <div class="rpt-sidebar-item" onclick="rptShow('rpt-access', this)"><span class="rpt-dot pass"></span> Accessibility</div>
+            <div class="rpt-sidebar-item" onclick="rptShow('rpt-schema', this)"><span class="rpt-dot fail"></span> Schema Version</div>
+            <div class="rpt-sidebar-item" onclick="rptShow('rpt-update', this)"><span class="rpt-dot fail"></span> Annual Update</div>
+            <div class="rpt-sidebar-item" onclick="rptShow('rpt-attest', this)"><span class="rpt-dot fail"></span> 2026 Attestation</div>
+            <div class="rpt-sidebar-item" onclick="rptShow('rpt-npi', this)"><span class="rpt-dot fail"></span> Type 2 NPI Field</div>
+            <div class="rpt-sidebar-item" onclick="rptShow('rpt-pct', this)"><span class="rpt-dot fail"></span> Percentile Amounts</div>
+          </div>
+          <div class="rpt-sidebar-section">
+            <div class="rpt-sidebar-title">§ 180.60 · Consumer Display</div>
+            <div class="rpt-sidebar-item" onclick="rptShow('rpt-shoppable', this)"><span class="rpt-dot warn"></span> Shoppable Services</div>
+            <div class="rpt-sidebar-item" onclick="rptShow('rpt-estimator', this)"><span class="rpt-dot pass"></span> Price Estimator</div>
+            <div class="rpt-sidebar-item" onclick="rptShow('rpt-footer', this)"><span class="rpt-dot pass"></span> Footer Link</div>
+          </div>
+          <div class="rpt-sidebar-section">
+            <div class="rpt-sidebar-title">Action Items</div>
+            <div class="rpt-sidebar-item" onclick="rptShow('rpt-remediation', this)"><span class="rpt-dot fail"></span> Remediation Sequence</div>
+            <div class="rpt-sidebar-item" onclick="rptShow('rpt-penalties', this)"><span class="rpt-dot fail"></span> Penalty Exposure</div>
+          </div>
+        </div>
+
+        <!-- CONTENT PANE -->
+        <div class="rpt-content">
+
+          <!-- OVERVIEW -->
+          <div id="rpt-overview" class="rpt-section rpt-active">
+            <div class="rpt-section-title">Audit Overview</div>
+            <div class="rpt-section-sub">Valley Ridge Medical Center · NPI 1234567890 · 214 Licensed Beds · Springfield, OH</div>
+
+            <div class="rpt-overview-grid">
+              <div class="rpt-overview-card">
+                <h3>Facility Information</h3>
+                <p>Valley Ridge Medical Center<br/>1400 Valley Ridge Boulevard<br/>Springfield, OH 45501<br/>NPI: 1234567890 · EIN: 31-4159265<br/>Bed Count: 214 Licensed Beds</p>
+              </div>
+              <div class="rpt-overview-card">
+                <h3>MRF Location</h3>
+                <code style="font-family:'DM Mono',monospace;font-size:11px;color:#3b82f6;word-break:break-all;">valleyridgemedical.org/standardcharges/VRMC_standardcharges.csv</code>
+                <p style="margin-top:8px">Last-Updated-On field in file: <span style="color:#ef4444">12/18/2024</span><br/>Required update interval: Annual (§180.50(a)(3)(ii))<br/>Days since last update: <span style="color:#ef4444">127 days</span></p>
+              </div>
+              <div class="rpt-overview-card">
+                <h3>Audit Scope</h3>
+                <p>12 compliance checks across §180.50 (MRF requirements) and §180.60 (consumer display). All checks performed against 45 CFR Part 180 current enforcement standards and CMS HPT FAQs dated March 24, 2026.</p>
+              </div>
+              <div class="rpt-overview-card">
+                <h3>Schema Analysis</h3>
+                <p>File identified as CMS template <span style="color:#ef4444">v2.0 format</span>. Current requirement is v3.x (mandatory since January 1, 2025). Missing fields: <code style="font-family:'DM Mono',monospace;font-size:11px;color:#00c9a7">npi</code>, <code style="font-family:'DM Mono',monospace;font-size:11px;color:#00c9a7">pct_10</code>, <code style="font-family:'DM Mono',monospace;font-size:11px;color:#00c9a7">pct_50</code>, <code style="font-family:'DM Mono',monospace;font-size:11px;color:#00c9a7">pct_90</code>, <code style="font-family:'DM Mono',monospace;font-size:11px;color:#00c9a7">estimated_amount_count</code>.</p>
+              </div>
+            </div>
+
+            <div class="rpt-alert-box">
+              <div class="rpt-alert-title">⛔ 7 Confirmed Non-Compliant Items Require Immediate Action</div>
+              At 214 licensed beds, Valley Ridge Medical Center's maximum daily Civil Monetary Penalty exposure is <strong style="color:#ef4444">$2,140/day</strong> ($10 × 214 beds). Seven confirmed failures all stem from a single root cause: failure to upgrade from CMS template v2.0 to v3.x and republish with updated data. A coordinated single MRF republication addresses all seven.
+            </div>
+
+            <div style="margin-top:20px">
+              <div class="rpt-section-title" style="font-size:14px;margin-bottom:12px">Findings at a Glance</div>
+              <div class="rpt-check-card">
+                <div class="rpt-check-header" onclick="rptToggle(this)">
+                  <span class="rpt-check-status fail">FAIL</span>
+                  <div class="rpt-check-title-area"><div class="rpt-check-title">CMS v3.x schema not in use — file validated as v2.0</div><div class="rpt-check-ref">§180.50(b)(1)(ii) · Mandatory since Jan 1, 2025</div></div>
+                  <span class="rpt-chevron">›</span>
+                </div>
+                <div class="rpt-check-body">
+                  <div class="rpt-check-finding">The <code style="font-family:'DM Mono',monospace;font-size:11px;color:#00c9a7">VRMC_standardcharges.csv</code> file header row does not contain the v3.x required columns <code style="font-family:'DM Mono',monospace;font-size:11px;color:#00c9a7">pct_10</code>, <code style="font-family:'DM Mono',monospace;font-size:11px;color:#00c9a7">pct_50</code>, or <code style="font-family:'DM Mono',monospace;font-size:11px;color:#00c9a7">pct_90</code>. The schema version field reads <span style="color:#ef4444">2.0</span>. This is the root deficiency from which the majority of other failures derive.</div>
+                  <div class="rpt-check-action"><strong>Required Action</strong>Download and implement the current CMS HPT template (v3.x) from github.com/CMSgov/hospital-price-transparency. Repopulate all general data element fields and charge data rows before republishing.</div>
+                </div>
+              </div>
+              <div class="rpt-check-card">
+                <div class="rpt-check-header" onclick="rptToggle(this)">
+                  <span class="rpt-check-status fail">FAIL</span>
+                  <div class="rpt-check-title-area"><div class="rpt-check-title">Type 2 NPI absent from file header general data elements</div><div class="rpt-check-ref">§180.50(b)(1)(i)(B) · Required field: npi</div></div>
+                  <span class="rpt-chevron">›</span>
+                </div>
+                <div class="rpt-check-body">
+                  <div class="rpt-check-finding">The <code style="font-family:'DM Mono',monospace;font-size:11px;color:#00c9a7">npi</code> field is absent from the file's general data element section. CMS requires the hospital's Type 2 (organizational) NPI — not an individual provider NPI — to be encoded as a general data element in the MRF header. Valley Ridge's Type 2 NPI is 1234567890.</div>
+                  <div class="rpt-check-action"><strong>Required Action</strong>Populate <code style="font-family:'DM Mono',monospace;font-size:11px;color:#00c9a7">npi</code> = 1234567890 in the general data elements section of the upgraded v3.x template.</div>
+                </div>
+              </div>
+              <div class="rpt-check-card">
+                <div class="rpt-check-header" onclick="rptToggle(this)">
+                  <span class="rpt-check-status pass">PASS</span>
+                  <div class="rpt-check-title-area"><div class="rpt-check-title">MRF file is publicly accessible and downloadable without login</div><div class="rpt-check-ref">§180.50(d)(3) · No authentication barrier</div></div>
+                  <span class="rpt-chevron">›</span>
+                </div>
+                <div class="rpt-check-body">
+                  <div class="rpt-check-finding">The MRF at <code style="font-family:'DM Mono',monospace;font-size:11px;color:#00c9a7">valleyridgemedical.org/standardcharges/VRMC_standardcharges.csv</code> returns HTTP 200 and downloads without requiring user authentication, account creation, or any form completion. This satisfies §180.50(d)(3).</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SCHEMA section (one of the navigable views) -->
+          <div id="rpt-schema" class="rpt-section">
+            <div class="rpt-section-title">Schema Version Compliance</div>
+            <div class="rpt-section-sub">§180.50(b)(1)(ii) · CMS Template v3.x required since January 1, 2025</div>
+            <div class="rpt-check-card">
+              <div class="rpt-check-header" onclick="rptToggle(this)">
+                <span class="rpt-check-status fail">FAIL</span>
+                <div class="rpt-check-title-area"><div class="rpt-check-title">File schema version is 2.0 — v3.x required</div><div class="rpt-check-ref">§180.50(b)(1)(ii) · 90 FR 54087</div></div>
+                <span class="rpt-chevron">›</span>
+              </div>
+              <div class="rpt-check-body">
+                <div class="rpt-check-finding">
+                  File header inspection confirms schema_version = <span style="color:#ef4444">2.0</span>. CMS mandated the v3.x template effective January 1, 2025. The v3.x schema introduced five new required fields not present in this file:
+                  <div class="rpt-mrf-preview" style="margin-top:12px">
+                    <div class="rpt-mrf-row"><span class="rpt-mrf-key">pct_10</span><span class="rpt-mrf-val bad">MISSING — required in v3.x</span></div>
+                    <div class="rpt-mrf-row"><span class="rpt-mrf-key">pct_50 (median)</span><span class="rpt-mrf-val bad">MISSING — required in v3.x</span></div>
+                    <div class="rpt-mrf-row"><span class="rpt-mrf-key">pct_90</span><span class="rpt-mrf-val bad">MISSING — required in v3.x</span></div>
+                    <div class="rpt-mrf-row"><span class="rpt-mrf-key">estimated_amount_count</span><span class="rpt-mrf-val bad">MISSING — required in v3.x</span></div>
+                    <div class="rpt-mrf-row"><span class="rpt-mrf-key">npi (general data)</span><span class="rpt-mrf-val bad">MISSING — required in v3.x</span></div>
+                    <div class="rpt-mrf-row"><span class="rpt-mrf-key">schema_version</span><span class="rpt-mrf-val bad">2.0 — must be 3.x</span></div>
+                  </div>
+                </div>
+                <div class="rpt-check-action"><strong>Required Action</strong>Migrate to the CMS v3.x template. This single action simultaneously resolves the schema version failure, the NPI field absence, the missing percentile columns, and the outdated attestation structure.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PENALTIES section -->
+          <div id="rpt-penalties" class="rpt-section">
+            <div class="rpt-section-title">Civil Monetary Penalty Exposure</div>
+            <div class="rpt-section-sub">45 CFR §180.90 · As of April 24, 2026 · Valley Ridge Medical Center</div>
+            <div class="rpt-warn-box">
+              <div class="rpt-warn-title">⚠ Informational summary — not legal advice</div>
+              CMP amounts are adjusted annually by OMB. Figures below reflect the regulatory structure as of the analysis date. Consult legal counsel for specific compliance advice.
+            </div>
+            <table class="rpt-penalty-table">
+              <thead><tr><th>Hospital Size</th><th>Max Daily CMP</th><th>Applies to Valley Ridge?</th></tr></thead>
+              <tbody>
+                <tr><td>≤ 30 beds</td><td style="color:#ef4444">$300/day</td><td style="color:#6b7f99">—</td></tr>
+                <tr><td>31–550 beds</td><td style="color:#f59e0b">Beds × $10/day</td><td style="color:#ef4444">✓ Yes — 214 beds = $2,140/day</td></tr>
+                <tr><td>&gt; 550 beds</td><td style="color:#ef4444">$5,500/day</td><td style="color:#6b7f99">—</td></tr>
+              </tbody>
+            </table>
+            <div style="margin-top:20px;font-size:13px;color:#98aec4;line-height:1.8">
+              <strong style="color:#e2eaf4">Key enforcement facts (§180.90):</strong><br/>
+              — Valley Ridge is a 214-bed facility → max <span style="color:#ef4444">$2,140/day</span> CMP<br/>
+              — MRF last updated 12/18/2024 — non-compliance began January 1, 2025<br/>
+              — Potential accrual since non-compliance began: <span style="color:#ef4444">est. $300,000+</span><br/>
+              — Beginning Jan 1, 2026: hospitals may receive a <span style="color:#22c55e">35% CMP reduction</span> by waiving hearing rights within 30 calendar days<br/>
+              — CMS publishes enforcement actions publicly on CMS.gov
+            </div>
+          </div>
+
+          <!-- REMEDIATION section -->
+          <div id="rpt-remediation" class="rpt-section">
+            <div class="rpt-section-title">Prioritized Remediation Sequence</div>
+            <div class="rpt-section-sub">Valley Ridge Medical Center · 7 confirmed failures — recommended action order</div>
+            <div class="rpt-alert-box">
+              <div class="rpt-alert-title">⛔ All Seven Failures Resolved by a Single MRF Republication</div>
+              Most failures are resolved by one coordinated action: upgrading to the CMS v3.x template, populating all new required fields, and republishing. Bundling these into one update minimizes exposure and avoids multiple partial-fix cycles.
+            </div>
+            <div class="rpt-remediation-step"><div class="rpt-step-num">1</div><div class="rpt-step-body"><div class="rpt-step-title">Upgrade to CMS Template v3.x</div><div class="rpt-step-detail">Download the current CMS HPT template from github.com/CMSgov/hospital-price-transparency. This is the root fix — it simultaneously addresses the schema version error, missing NPI column, missing percentile columns, and outdated attestation structure.</div></div></div>
+            <div class="rpt-remediation-step"><div class="rpt-step-num">2</div><div class="rpt-step-body"><div class="rpt-step-title">Populate General Data Element Fields</div><div class="rpt-step-detail">In the upgraded template, populate: (a) <code style="font-family:'DM Mono',monospace;font-size:11px">npi</code> = 1234567890, (b) <code style="font-family:'DM Mono',monospace;font-size:11px">hospital_type</code> = general acute care, (c) the 2026 attestation text per §180.50(a)(3)(iii), (d) <code style="font-family:'DM Mono',monospace;font-size:11px">last_updated_on</code> = today's date.</div></div></div>
+            <div class="rpt-remediation-step"><div class="rpt-step-num">3</div><div class="rpt-step-body"><div class="rpt-step-title">Add Percentile Allowed Amount Data</div><div class="rpt-step-detail">For each payer-contract row encoded with a percentage or algorithm charge, calculate 10th, median, and 90th percentile allowed amounts from EDI 835 remittance data using a 12–15 month lookback window. This requires processing of historical ERA files — the most technically complex step.</div></div></div>
+            <div class="rpt-remediation-step"><div class="rpt-step-num">4</div><div class="rpt-step-body"><div class="rpt-step-title">Rename File per §180.50(d)(5)</div><div class="rpt-step-detail">Rename the output file to <code style="font-family:'DM Mono',monospace;font-size:11px">[EIN]_Valley-Ridge-Medical-Center_standardcharges.csv</code>. Confirm EIN beforehand. Apply the same convention to any JSON file also published.</div></div></div>
+          </div>
+
+          <!-- stub sections for sidebar links that just show "see full report" -->
+          <div id="rpt-txt" class="rpt-section"><div class="rpt-section-title">.txt Root File Check</div><div class="rpt-section-sub">§180.50(d)(5) · cms-hpt.txt endpoint</div><div class="rpt-warn-box"><div class="rpt-warn-title">⚠ Partial Compliance — Verification Required</div>A cms-hpt.txt file exists at valleyridgemedical.org/cms-hpt.txt but is missing the required <code style="font-family:'DM Mono',monospace;font-size:11px;color:#00c9a7">contact-name</code> and <code style="font-family:'DM Mono',monospace;font-size:11px;color:#00c9a7">contact-email</code> fields. All four fields are mandatory per CMS guidance.</div></div>
+          <div id="rpt-naming" class="rpt-section"><div class="rpt-section-title">File Naming Convention</div><div class="rpt-section-sub">§180.50(d)(5) · [EIN]_[Hospital-Name]_standardcharges.[ext]</div><div class="rpt-alert-box"><div class="rpt-alert-title">⛔ Naming Convention Non-Compliant</div>Current filename <code style="font-family:'DM Mono',monospace;font-size:11px;color:#00c9a7">VRMC_standardcharges.csv</code> does not include the required EIN prefix. Required format: <code style="font-family:'DM Mono',monospace;font-size:11px;color:#22c55e">[EIN]_Valley-Ridge-Medical-Center_standardcharges.csv</code></div></div>
+          <div id="rpt-access" class="rpt-section"><div class="rpt-section-title">MRF Accessibility</div><div class="rpt-section-sub">§180.50(d)(3) · No login or authentication barrier</div><div class="rpt-check-card"><div class="rpt-check-header" onclick="rptToggle(this)"><span class="rpt-check-status pass">PASS</span><div class="rpt-check-title-area"><div class="rpt-check-title">File accessible without authentication — HTTP 200 confirmed</div><div class="rpt-check-ref">§180.50(d)(3)</div></div><span class="rpt-chevron">›</span></div><div class="rpt-check-body"><div class="rpt-check-finding">Direct URL download confirmed. No login, CAPTCHA, or account creation required. Satisfies §180.50(d)(3).</div></div></div></div>
+          <div id="rpt-update" class="rpt-section"><div class="rpt-section-title">Annual Update Requirement</div><div class="rpt-section-sub">§180.50(a)(3)(ii) · Must be updated at least annually</div><div class="rpt-alert-box"><div class="rpt-alert-title">⛔ Update Overdue by 127 Days</div>The <code style="font-family:'DM Mono',monospace;font-size:11px;color:#00c9a7">last_updated_on</code> field reads 12/18/2024. As of April 24, 2026, this file is 127 days past its required annual update window. Non-compliance for this item began on or around December 18, 2025.</div></div>
+          <div id="rpt-attest" class="rpt-section"><div class="rpt-section-title">2026 Attestation Statement</div><div class="rpt-section-sub">§180.50(a)(3)(iii) · Updated attestation mandatory for 2026</div><div class="rpt-alert-box"><div class="rpt-alert-title">⛔ Attestation Uses Deprecated 2024 Format</div>The attestation statement present in the file uses the pre-2026 format. CMS updated the required attestation language effective January 1, 2026. The current file does not include the required attester name field or the updated declaration language.</div></div>
+          <div id="rpt-npi" class="rpt-section"><div class="rpt-section-title">Type 2 NPI Field</div><div class="rpt-section-sub">§180.50(b)(1)(i)(B) · Organizational NPI required as general data element</div><div class="rpt-alert-box"><div class="rpt-alert-title">⛔ Type 2 NPI Field Absent</div>The <code style="font-family:'DM Mono',monospace;font-size:11px;color:#00c9a7">npi</code> general data element field is not present in the file. This field, introduced in v3.x, must contain the hospital's Type 2 organizational NPI (1234567890 for Valley Ridge).</div></div>
+          <div id="rpt-pct" class="rpt-section"><div class="rpt-section-title">Percentile Allowed Amounts</div><div class="rpt-section-sub">§180.50(b)(2)(ii)(D) · 10th, median, 90th percentile required for pct/algorithm rows</div><div class="rpt-alert-box"><div class="rpt-alert-title">⛔ All Percentile Columns Absent</div>Columns <code style="font-family:'DM Mono',monospace;font-size:11px;color:#00c9a7">pct_10</code>, <code style="font-family:'DM Mono',monospace;font-size:11px;color:#00c9a7">pct_50</code>, <code style="font-family:'DM Mono',monospace;font-size:11px;color:#00c9a7">pct_90</code>, and <code style="font-family:'DM Mono',monospace;font-size:11px;color:#00c9a7">estimated_amount_count</code> are entirely absent. These require statistical processing of 12–15 months of historical EDI 835 remittance data.</div></div>
+          <div id="rpt-shoppable" class="rpt-section"><div class="rpt-section-title">Shoppable Services Display</div><div class="rpt-section-sub">§180.60 · 300 CMS-specified shoppable services</div><div class="rpt-warn-box"><div class="rpt-warn-title">⚠ Verification Required</div>A consumer-facing price tool is present but could not be confirmed to include all 300 CMS-specified shoppable services or to provide patient-specific (not list-price) estimates. Manual verification with your patient financial services team is required.</div></div>
+          <div id="rpt-estimator" class="rpt-section"><div class="rpt-section-title">Price Estimator Tool</div><div class="rpt-section-sub">§180.60(b) · Good-faith estimate functionality</div><div class="rpt-check-card"><div class="rpt-check-header" onclick="rptToggle(this)"><span class="rpt-check-status pass">PASS</span><div class="rpt-check-title-area"><div class="rpt-check-title">Price estimator tool present and accessible without login</div><div class="rpt-check-ref">§180.60(b)</div></div><span class="rpt-chevron">›</span></div><div class="rpt-check-body"><div class="rpt-check-finding">A patient price estimator is available at <code style="font-family:'DM Mono',monospace;font-size:11px;color:#3b82f6;">valleyridgemedical.org/price-estimate</code> and does not require login to access. Satisfies §180.60(b) accessibility requirements. Recommend confirming tool covers minimum required services.</div></div></div></div>
+          <div id="rpt-footer" class="rpt-section"><div class="rpt-section-title">Website Footer Price Transparency Link</div><div class="rpt-section-sub">§180.50(d)(6)(ii) · Required footer text: "Price Transparency"</div><div class="rpt-check-card"><div class="rpt-check-header" onclick="rptToggle(this)"><span class="rpt-check-status pass">PASS</span><div class="rpt-check-title-area"><div class="rpt-check-title">Footer link labeled "Price Transparency" confirmed on valleyridgemedical.org</div><div class="rpt-check-ref">§180.50(d)(6)(ii)</div></div><span class="rpt-chevron">›</span></div><div class="rpt-check-body"><div class="rpt-check-finding">The footer of <code style="font-family:'DM Mono',monospace;font-size:11px;color:#3b82f6;">valleyridgemedical.org</code> contains a link labeled exactly "Price Transparency" linking to the hospital's standard charges page. Satisfies §180.50(d)(6)(ii).</div></div></div></div>
+
+        </div><!-- end rpt-content -->
+      </div><!-- end rpt-main -->
+
+    </div><!-- end sample-report-body -->
+
+  </div><!-- end report-wrapper -->
+
+  <div class="report-below-cta">
+    <div class="report-below-inner">
+      <div class="report-below-title">Your facility's report looks exactly like this — every deficiency cited to the specific CFR sub-section, every finding expandable, every remediation step actionable by your IT or compliance team.</div>
+      <a href="#pricing" class="report-gate-cta" onclick="trackCTA('sample_report_below_cta')">Order Your Audit — See Pricing</a>
+      <div class="report-gate-note">Delivered within 5 business days · No retainer · Engagement confirmed within the hour</div>
+    </div>
+  </div>
+</div><!-- end sample-report-section -->
 
 <div class="divider-line"></div>
 
@@ -787,7 +1422,26 @@
 </footer>
 
 <script>
-// ── STICKY RAIL ──────────────────────────────────────────────────────────────
+// ── SAMPLE REPORT NAVIGATION ─────────────────────────────────────────────────
+function rptShow(id, el) {
+  document.querySelectorAll('.rpt-section').forEach(function(s) { s.classList.remove('rpt-active'); });
+  document.querySelectorAll('.rpt-sidebar-item').forEach(function(s) { s.classList.remove('rpt-active'); });
+  var target = document.getElementById(id);
+  if (target) target.classList.add('rpt-active');
+  if (el) el.classList.add('rpt-active');
+  // scroll content pane to top
+  var content = document.querySelector('.rpt-content');
+  if (content) content.scrollTop = 0;
+}
+
+function rptToggle(header) {
+  var body = header.nextElementSibling;
+  var isOpen = body.classList.contains('rpt-open');
+  header.closest('.rpt-check-card').querySelectorAll('.rpt-check-body').forEach(function(b) { b.classList.remove('rpt-open'); });
+  header.closest('.rpt-check-card').querySelectorAll('.rpt-check-header').forEach(function(h) { h.classList.remove('rpt-open'); });
+  if (!isOpen) { body.classList.add('rpt-open'); header.classList.add('rpt-open'); }
+}
+
 (function () {
   var rail = document.getElementById('stickyRail');
   var threshold = document.querySelector('.hero').offsetHeight + 80;
